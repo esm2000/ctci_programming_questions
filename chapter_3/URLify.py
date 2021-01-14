@@ -1,28 +1,33 @@
-def replaceSpace(s):
+def replaceSpace(s, index):
     
-    
+    s[index] = '%'
+    index -= 1
+    s[index] = '0'
+    index -= 1
+    s[index] = '2'
+    index -= 1
 
-    return s
+    return s, index
 
 def URLify(s, true_length):
 
     true_pointer = true_length - 1
+    pointer = len(s) - 1
 
-    output = ''
+    output = [''] * len(s)
 
-    # wanted to use double pointer method for 
-    # efficiency but strings are immutable in Python...
     for i in range(true_length - 1, -1, -1):
+        print(i)
         if s[true_pointer] != ' ':
-            output += s[true_pointer]
+            output[pointer] = s[true_pointer]
             true_pointer -= 1
+            pointer -= 1
         else: 
-            output += '%'
-            output += '0'
-            output += '2'
+            output, pointer = replaceSpace(output, pointer)
             true_pointer -= 1
     
-    return output[::-1]
+    return output
 
-print(URLify('Mr John Smith    ', 13))
+print(URLify(list('Mr John Smith    '), 13))
+
 
