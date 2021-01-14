@@ -1,2 +1,2 @@
-# ctci_programming_questions
+# Cracking the Coding Interview Programming Questions
  Programming questions from Cracking the Coding Interview
