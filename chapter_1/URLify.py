@@ -19,7 +19,6 @@ def replaceSpace(s, index):
 
 def URLify(s, true_length):
 
-    
     true_pointer = true_length - 1
     pointer = len(s) - 1
 
