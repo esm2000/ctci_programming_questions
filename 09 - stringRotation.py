@@ -4,14 +4,17 @@
 # call to isSubstring (e.g., "waterbottle" is a rotation
 # of"erbottlewat").
 
+
 def isSubstring(s1, s2):
     return s2 in s1
+
 
 def stringRotation(s1, s2):
     # a rotated string concatenated with itself will
     # contain the original string somewhere in it
     s3 = s2 + s2
 
-    return isSubstring(s3, s1)    
+    return isSubstring(s3, s1)
+
 
 print(stringRotation('waterbottle', 'erbottlewat'))
