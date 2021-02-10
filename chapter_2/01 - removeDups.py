@@ -1,7 +1,9 @@
+import sys
+sys.path.insert(1, '../data_structures')
+import linkedList
+
 # Remove Dups: Write code to remove duplicates
 # from an unsorted linked list.
-
-import linkedList
 
 def removeDups(linkedList):
     record = {}

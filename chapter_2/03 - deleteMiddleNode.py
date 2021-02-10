@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(1, '../data_structures')
 import linkedList
 
 # Delete Middle Node: Implement an algorithm to delete 

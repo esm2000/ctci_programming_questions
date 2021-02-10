@@ -1,7 +1,9 @@
+import sys
+sys.path.insert(1, '../data_structures')
+import linkedList
+
 # Return Kth to Last: Implement an algorithm to
 # find the kth to last element of a singly linked list. 
-
-import linkedList
 
 def returnKthToLast(linked_list, k):
 
