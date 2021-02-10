@@ -7,6 +7,7 @@ import linkedList
 
 def returnKthToLast(linked_list, k):
 
+    # iterate through list to get length
     curr = linked_list.head
     length = 1
 
@@ -15,8 +16,10 @@ def returnKthToLast(linked_list, k):
         if curr:
             length += 1
 
+    # get the index of the kth to last element
     j = length - k + 1
 
+    # iterate through list to kth to last node
     for i in range(j):
         if i == 0:
             curr = linked_list.head

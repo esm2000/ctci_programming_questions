@@ -8,21 +8,35 @@ import linkedList
 # exact middle) of a singly linked list,
 # given only access to that node. 
 
-def deleteMiddleNode(linkedlist):
+# helper function for testing purposes
+# so technically not a part of the 
+# problem 
+def getMiddleNode(linkedlist):
     
+    # two pointers to traverse linked list
     p1 = linkedlist.head
     p2 = linkedlist.head
 
     while p1.next:
+        # pointer 1 travels at two nodes at a time
         p1 = p1.next
         if p1.next is None:
             continue
         p1 = p1.next
 
-        p2_prev = p2
+        # pointer 2 travels at one node at a time
         p2 = p2.next
 
-    p2_prev.next = p2.next
+    # by the time pointer 1 reaches the end of 
+    # list, pointer 2 should point to middle 
+    # node
+    return p2
+
+# copies next node's info into 
+# middle node to "delete" it
+def deleteMiddleNode(node):
+    node.data = node.next.data
+    node.next = node.next.next
 
 print('Even length')
 llist = linkedList.SLinkedList()
@@ -35,7 +49,7 @@ llist.Atbeginning('a')
 llist.LListprint()
 
 print('')
-deleteMiddleNode(llist)
+deleteMiddleNode(getMiddleNode(llist))
 llist.LListprint()
 
 print('')
@@ -50,6 +64,6 @@ llist.Atbeginning('a')
 llist.LListprint()
 
 print('')
-deleteMiddleNode(llist)
+deleteMiddleNode(getMiddleNode(llist))
 llist.LListprint()
         
